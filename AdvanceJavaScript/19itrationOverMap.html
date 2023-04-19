@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let recipeMap = new Map([
+            ['cucumber', 500],
+            ['tomatoes', 350],
+            ['onion', 50]
+        ]);
+        console.log(recipeMap);
+        console.log(recipeMap.keys());
+        // iterate over keys (vegetables)
+        for (let vegetable of recipeMap.keys()) {
+            console.log(vegetable); // cucumber, tomatoes, onion
+        }
+
+        // // iterate over values (amounts)
+        for (let amount of recipeMap.values()) {
+            console.log(amount); // 500, 350, 50
+        }
+
+        // // iterate over [key, value] entries
+        for (let entry of recipeMap) { // the same as of recipeMap.entries()
+            // console.log(entry); // cucumber,500 (and so on)
+            // console.log(entry[0]); // cucumber,500 (and so on)
+            // console.log(entry[1]); // cucumber,500 (and so on)
+            console.log("vegi is : "+entry[0]+" Price is "+entry[1]);
+        }
+    </script>
+</body>
+
+</html>

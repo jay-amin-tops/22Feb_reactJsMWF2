@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <input type="text" name="val1"class="val1" id="val1">
+    <input type="text" name="val2"class="val2" id="val2">
+    <input type="button" value="btn" name="btn"class="btn" onclick="getdata()" id="btn"> -->
+    <script>
+        for (let index = 0; index < 10; index++) {
+        
+            for (let I = 0; I <= index; I++) {
+                document.writeln("*");
+            }
+            document.writeln("<br>");
+        }
+        function getdata() {
+            let InpVal1 = document.getElementById('val1').value
+            let InpVal2 = document.getElementById('val2').value
+            // InpVal = document.getElementsByClassName("username")
+            // InpVal = document.getElementsByName('username')
+            // InpVal = document.getElementsByTagName("input")
+            // InpVal = document.querySelector(".username")
+            // InpVal = document.querySelectorAll("#username")
+            let a = 45;
+            let b = 45;
+            console.log(a+b);
+            console.log(typeof InpVal2);
+            intva = parseFloat(InpVal2);
+            console.log(parseFloat(InpVal1) +parseFloat(InpVal2));
+            console.log(typeof InpVal2);
+            console.log(typeof intva);
+            // // console.log(InpVal.value);
+            // console.log(InpVal[0]);
+            // console.log(InpVal[0].value);
+        }
+
+        'use strict';
+        // console.log(username);
+        // let username = "Testing"
+        // const username = "Testing"
+        // var username = "Testing"
+        // console.log(username);
+        // var username = "test"
+        username = "test"
+        // var username = "testing"
+        // console.log(username);
+    </script>
+</body>
+</html>

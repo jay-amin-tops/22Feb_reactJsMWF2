@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let range = {
+        from: 1,
+        to: 5,
+      };
+
+      range[Symbol.iterator] = function () {
+        return {
+          current: this.from,
+          last: this.to,
+          next() {
+            if (this.current <= this.last) {
+              return { done: false, value: this.current++ };
+            } else {
+              return { done: true };
+            }
+            console.log("called");
+          },
+        };
+      };
+      console.log(range);
+      console.log(range);
+      // let iterator = str[Symbol.iterator]();
+      let str = "Hello";
+      let iterator = str[Symbol.iterator]();
+
+      while (true) {
+        let result = iterator.next();
+        if (result.done) break;
+        alert(result.value); // outputs characters one by one
+      }
+
+
+    //   for
+      for (let index = 0; index < 10; index++) {
+        
+      }
+    </script>
+  </body>
+</html>

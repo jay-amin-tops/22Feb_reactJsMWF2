@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>this points itself object</p>    
+    <script>
+        // let VaraibleOutSide = "Example of VaraibleOutSide"
+        // var VaraibleOutSide = "Example of VaraibleOutSide"
+        // const VaraibleOutSide = "Example of VaraibleOutSide"
+        // VaraibleOutSide = "Example of VaraibleOutSide"
+        class AccessModi{
+            DataMemeber = "Example of DataMember"
+            AuthorName = "ChetanBhai Bhagvan"
+            threeState(){
+                // AuthorName = "ChetanBhai Bhagvan"
+                return "ending"
+            }
+            twoIdiots(){
+                // AuthorName = "ChetanBhai Bhagvan"
+                // console.log(this.threeState());
+                const EndingOfTw = this.threeState();
+                return EndingOfTw +" by "+ this.AuthorName+" bye bye ";
+
+            }
+        }
+        const AccessClass = new AccessModi
+        // console.log(AccessClass.DataMemeber);
+        console.log(AccessClass.twoIdiots());
+    </script>
+
+</body>
+</html>

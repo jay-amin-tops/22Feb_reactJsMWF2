@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         let sayHiMixin = {
+            sayHi() {
+                alert(`Hello ${this.name}`);
+            },
+            sayBye() {
+                alert(`Bye ${this.name}`);
+            }
+        };
+        class User {
+            constructor(name) {
+                this.name = name;
+            }
+        }
+        Object.assign(User.prototype, sayHiMixin);
+        new User("Dude").sayHi(); 
+        // console.log(sayHiMixin);
+        // console.log(sayHiMixin.sayHi);
+        // console.log(sayHiMixin.sayHi());
+    </script>
+</body>
+</html>

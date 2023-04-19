@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // let VaraibleOutSide = "Example of VaraibleOutSide"
+        // var VaraibleOutSide = "Example of VaraibleOutSide"
+        // const VaraibleOutSide = "Example of VaraibleOutSide"
+        // VaraibleOutSide = "Example of VaraibleOutSide"
+        class AccessModi{
+            DataMemeber = "Example of DataMember"
+            // AuthorName = "ChetanBhai Bhagvan"
+            #AuthorName = "ChetanBhai Bhagvan"
+            threeState(){
+                // AuthorName = "ChetanBhai Bhagvan"
+                console.log("Parent Method");
+                console.log(this.AuthorName);
+            }
+            twoIdiots(){
+                // AuthorName = "ChetanBhai Bhagvan"
+                
+            }
+        }
+        class OtherBookSaller extends AccessModi{
+            // DataMemeber = "Example of DataMember"
+            // AuthorName = "ChetanBhai OtherBookSaller"
+            threeState1(){
+                // AuthorName = "ChetanBhai Bhagvan"
+                console.log("child Method");
+                console.log(this.AuthorName);
+                console.log(this.DataMemeber);
+            }
+            twoIdiots(){
+                // AuthorName = "ChetanBhai Bhagvan"
+                
+            }
+        }
+        const AccessClass = new OtherBookSaller
+        // console.log(AccessClass.DataMemeber);
+        console.log(AccessClass.threeState1());
+    </script>
+
+</body>
+</html>

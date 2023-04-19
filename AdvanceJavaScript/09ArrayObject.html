@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // $Maths = 99;
+        // $Eng = 92;
+        // $Comp = 100;
+        // $Guj = 80;
+        let PersonArray = [99, 92, 95, 88]; //array
+        let Person = { "Eng": 99, "Guj": 92, "Comp": '95', "Comp": 88 }; // "object literal" syntax
+
+        // let user = new Object("data"); // "object constructor" syntax
+        // // let user = {};  // "object literal" syntax
+        // console.log(user);
+        // console.log(Person);
+        // console.log(Person.Eng);
+        // console.log(PersonArray[0]);
+        console.log(Person);
+        delete Person.Eng;
+        console.log(Person);
+
+        let user = {
+            name: "John",
+            age: 30,
+            likes_birds: true,
+            "likes birds": true  // multiword property name must be quoted
+        };
+        alert(user["likes birds"]); // true
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <p>
+        The Promise object represents the eventual completion (or failure) of an asynchronous operation and its
+        resulting value.
+    </p>
+    <p>
+        To learn about the way promises work and how you can use them, we advise you to read Using promises first.
+    </p>
+    <p class="something" id="para">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse illo ipsam pariatur consectetur cupiditate, laboriosam odit quia itaque quas rem eligendi animi consequatur minus eum id eveniet architecto rerum laudantium?</p>
+    <button onclick="changeCSS()">Click</button>
+    <ul>
+        <li><em>pending</em>: initial state, neither fulfilled nor rejected.</li>
+        <li><em>fulfilled</em>: meaning that the operation was completed successfully.</li>
+        <li><em>rejected</em>: meaning that the operation failed.</li>
+    </ul>
+    <script>
+        function changeCSS() {
+            let Para = document.getElementById("para")
+            console.log(Para.classList);
+            Para.classList.add("other-css")
+        }
+    </script>
+    <ul id="dispData">
+
+    </ul>
+    <script>
+        // fetch("https://jsonplaceholder.typicode.com/todos").then((res)=>res.json()).then()
+        // fetch("https://jsonplaceholder.typicode.com/todos").then((res)=>{console.log(res);}).then()
+        fetch("https://jsonplaceholder.typicode.com/todos").then((res)=>res.json()).then((result)=>{
+            console.log(result);
+            html = ""
+            result.forEach(element => {
+                console.log(element.title);
+                // html+=element.title
+                // html+="<li>"+element.title+"</li>"
+                html+=`<li class="other-css">${element.title}</li>`
+            });
+            console.log(html);
+            document.getElementById("dispData").innerHTML = html
+            // document.getElementById("dispData").innerText = html
+        })
+        // function fetchData(params) {            
+        // }
+        // fetchData()
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>constructor is a method which is invoked by default when objects are created </p>
+    <p>constructor never return </p>
+    <p>constructor use for init some value </p>
+    <script>
+        class ConstructorExample{
+            connection = ""
+            constructor(re) {
+                this.connection = re
+                console.log("called constructor");
+            }
+            
+            simpleMethod(){
+                console.log(this.connection);
+                return "called simple method";
+                // console.log("called simple method");
+            }
+        }
+        object = new ConstructorExample("test");
+        console.log(object.simpleMethod());
+        object = new ConstructorExample("checking");
+        console.log(object.simpleMethod());
+        
+    </script>
+</body>
+</html>

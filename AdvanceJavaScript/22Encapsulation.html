@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Encapsulation is a proccess to wrapping the data into single unit</p>
+    <p>Class is an example of Encapsulation</p>
+    <p>Class is a collection of datamembers and member functions only</p>
+    <script>
+        // class ICICI{
+        //     function createAccount(params) {
+        //         console.log("called");
+        //     }
+        // }
+        // class SBI{
+        //     function createAccount(params) {
+        //         console.log("called");
+        //     }
+        // }
+        class DhakkaBank{
+            createAccount(params) {
+                console.log("called");
+                return "Something"
+            }
+        }
+        let anything = new DhakkaBank;
+        // console.log(anything);
+        console.log(anything.createAccount());
+    </script>
+</body>
+</html>

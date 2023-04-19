@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let user = null;
+        // let user = "Test";
+        let user = undefined;
+        // var uservar = "Test";
+
+        // function test(params) {
+        //     let userInsideFun = "Test";
+        //     var uservarInsideFun = "Test";
+        //     console.log(user); 
+        //     console.log(uservar); 
+        //     console.log(userInsideFun); 
+        //     console.log(uservarInsideFun); 
+        // }
+        // console.log(userInsideFun); 
+        // console.log(uservarInsideFun); 
+
+        // if (user == "Test") {
+        //     console.log("inside if");
+        // } else {
+        //     console.log("inside else");
+        // }
+        // if (user) {
+        // if (user == "Test") {
+        //     console.log("inside if");
+        // } else {
+        //     console.log("inside else");
+        // }
+        // }
+        // response= (condition) ?"true blog" : "false blog"
+        // response= (user == "Test") ?"inside ternary if" : "inside ternary else"
+        // console.log(response);
+
+        if (user == undefined) {
+            alert("Anonymous");
+        } else {
+            alert(user);
+        }
+        alert(user ?? "Anonymous"); // Anonymous (user is undefined)
+    </script>
+</body>
+
+</html>

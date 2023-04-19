@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Inheritance means access Parent Data to the child</p>
+    <p>with the help of extends keyword we can adopt Inheritance concept in JS OOPS</p>
+    <p>for accessing both parent and child data we can create an object of child</p>
+    <script>
+         class BasicMaths{ 
+            additionoftwo(x,y){
+                return x+y
+            }
+         }
+        //  function averageoftwo(a,b){
+        //      let sum = this.additionoftwo(a,b)  
+        //      return sum/2;  
+        //  }
+        //  averageoftwo=(a,b)=>{
+        //      let sum = this.additionoftwo(a,b)  
+        //      return sum/2;  
+        //  }
+        // averageoftwo(dada,dadi)
+        class AdvanceCal extends BasicMaths{
+            averageoftwo(a,b){
+                let sum = this.additionoftwo(a,b)  
+                return sum/2;  
+            }
+        }
+        // class Parent{ 
+        //     parentMethod(){
+        //         // console.log("parentData");
+        //         return "parentData"
+        //     }
+        //  }
+        // class Child extends Parent{
+        //     childMethod(){
+        //         console.log("Inside child method calling parent method",this.parentMethod());
+                
+        //         console.log("Child Method Data");
+        //     }
+        // }
+        ObjectOfChild = new AdvanceCal;
+        console.log(ObjectOfChild.averageoftwo(50,90));
+        // console.log("With the help of Object calling parent method out side of classes",ObjectOfChild.parentMethod());
+        
+    </script>
+    
+</body>
+</html>
