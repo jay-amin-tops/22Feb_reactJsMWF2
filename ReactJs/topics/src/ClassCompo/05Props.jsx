@@ -18,7 +18,9 @@ class ProspExample extends Component {
                     <CardCompo title="Other Product" imgSrc={BikeImg} kuchbhi="data" />
                     </div>
                     <div className="col-3"> 
-                    <CardCompo title="Other Product" imgSrc={`${process.env.PUBLIC_URL}/BMWBike.jpg`} kuchbhi="data" />
+                    {/* { JSON.stringify(process.env) } */}
+                    {/* <CardCompo title="Other Product" imgSrc={`${process.env.PUBLIC_URL}/BMWBike.jpg`} kuchbhi="data" /> */}
+                    <CardCompo title="Other Product" imgSrc={`/BMWBike.jpg`} kuchbhi="data" />
                     </div>
                 </div>
             </>
