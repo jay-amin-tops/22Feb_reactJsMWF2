@@ -1,3 +1,10 @@
 ::marker {
     text-align: center !important;
 }
+.custom-class{
+    background-color: teal;
+    color: white;
+}
+/* .col section{
+
+} */

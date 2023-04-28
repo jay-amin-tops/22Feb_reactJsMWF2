@@ -10,7 +10,11 @@ const FunctionalCompoMenu = () => {
                     <ul>
                         <li><Link to="functionalcompointro">Functional Compo Intro</Link></li>
                         <li><Link to="stateinfunction">State in Functional Compo</Link></li>
-                        <li><Link to="porpsinfunction">Props in Functional Compo</Link></li>
+                        <li><Link to="functionalcompouseeffect">Functional Compo UseEffect</Link></li>
+                        <li><Link to="functionalcompouseelayoutffect">Functional Compo UseLayoutEffect</Link></li>
+                        <li><Link to="functionalcompostyledcompo">StyledCompo</Link></li>
+                        <li><Link to="functionalcompousememo">UseMemo</Link></li>
+                        <li><Link to="functionalcompousememofactorial">UseMemo Factorial Example</Link></li>
                     </ul>
                 </div>
             </div>
