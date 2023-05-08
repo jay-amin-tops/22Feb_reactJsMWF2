@@ -15,6 +15,9 @@ const FunctionalCompoMenu = () => {
                         <li><Link to="functionalcompostyledcompo">StyledCompo</Link></li>
                         <li><Link to="functionalcompousememo">UseMemo</Link></li>
                         <li><Link to="functionalcompousememofactorial">UseMemo Factorial Example</Link></li>
+                        <li><Link to="functionalcompousecontext">UseContext Example</Link></li>
+                        <li><Link to="functionalcompousecallback">UseCallback Example</Link></li>
+                        <li><Link to="functionalcompouseimp">UseImpHandle Example</Link></li>
                     </ul>
                 </div>
             </div>

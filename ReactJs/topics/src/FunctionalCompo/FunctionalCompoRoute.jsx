@@ -9,6 +9,9 @@ import FunctionalCompoUseLayoutEffect from './05FunctionalCompoUseLayoutEffect.j
 import StyledCompoExample from './06StyledCompoExample.jsx';
 import FunctionalCompoUseMemo from './07FunctionalCompoUseMemo.jsx';
 import FunctionalCompoUseMemoFactorial from './08FunctionalCompoUseMemoFactorial.jsx';
+import FunctionalCompoUseCallback from './09FunctionalCompoUseCallback.jsx';
+import FunctionalCompoUseContext from './10FunctionalCompoUseContext.jsx';
+import FunctionalCompoUseImp from './11FunctionalCompoUseImp.jsx';
 
 class ClassCompoRoute extends Component {
     render() {
@@ -24,6 +27,9 @@ class ClassCompoRoute extends Component {
                         <Route path="functionalcompostyledcompo" element={<StyledCompoExample />} />
                         <Route path="functionalcompousememo" element={<FunctionalCompoUseMemo />} />
                         <Route path="functionalcompousememofactorial" element={<FunctionalCompoUseMemoFactorial />} />
+                        <Route path="functionalcompousecontext" element={<FunctionalCompoUseContext />} />
+                        <Route path="functionalcompousecallback" element={<FunctionalCompoUseCallback />} />
+                        <Route path="functionalcompouseimp" element={<FunctionalCompoUseImp />} />
                     </Route>
                 </Routes>
             </>

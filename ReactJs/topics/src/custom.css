@@ -8,3 +8,8 @@
 /* .col section{
 
 } */
+
+.panel-dark{ background-color: rgb(52, 121, 153); color: white;}
+.panel-light{ background-color: rgb(142, 127, 207); color: rgb(31, 33, 90);}
+.button-dark{ background-color: rgb(83, 80, 80); color: white;}
+.button-light{  background-color: rgb(21, 161, 188); color: rgb(37, 28, 28); }
