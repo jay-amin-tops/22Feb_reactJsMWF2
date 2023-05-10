@@ -10,10 +10,10 @@ const FunctionalUseImpChild = forwardRef((props, ref) => {
             console.log("called");
             let suffRes = shuffle(arr);
             // var index = suffRes.indexOf(1);
-            // setEle(suffRes[0]);
-            // suffRes.shift(); // for first element
+            setEle(suffRes[0]);
+            suffRes.shift(); // for first element
             // console.log(suffRes);
-            props.onAddHandler("abc");
+            props.onAddHandler(suffRes);
         },
     }));
     useEffect(() => {
@@ -39,9 +39,13 @@ const FunctionalUseImpChild = forwardRef((props, ref) => {
     };
     return (
         <>
-        child data
-            {ele}
-            {ele2}
+        <h3>Child Component</h3>
+        <table>
+            <tr>
+                <td>{ele}</td>
+                <td>{ele2}</td>
+            </tr>
+        </table>
         </>
     );
 });
