@@ -7,9 +7,9 @@ const HomePage = () => {
     // fetch("url").then("jsonresponse").then("result")
     useEffect(()=>{
         axios("https://jsonplaceholder.typicode.com/todos").then((result) => {
-            console.log(result);
-            let AllData = result.map((val,key)=>{
-                console.log("key ",key,"value ",val.title);
+            console.log(result.data);
+            let AllData = Object.entries(result.data).map(([key,val],i)=>{
+                console.log("key ",key,"value ",val);
                 return <li key={key}> {val.title} </li>
             })
             setData(AllData)

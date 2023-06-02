@@ -1,92 +1,118 @@
 import React, { useRef, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
+import CustomHook from './CustomHooks/customHook.jsx'
 import "./custom.css"
 import styled from 'styled-components'
 
 const LoginRegisterPage = () => {
-    const [rightPanel, setRightPanel] = useState(false)
-    const SetRightPanel = () => {
-        setRightPanel(true)
-    }
-    const SetLeftPanel = () => {
-        setRightPanel(false)
-    }
-    // const panelRef = useRef()
-    // const SetRightPanel = () => {
-    //     panelRef.current.className = "container right-panel-active"
-    // }
-    // const SetLeftPanel = () => {
-    //     panelRef.current.className = "container"
-    // }
+  // CustomHook.handleChange
+  const { handleChange,inp,errors } = CustomHook({},{});
+  const [rightPanel, setRightPanel] = useState(false)
+  const [state, setState] = useState({ formData: "" })
+  const SetRightPanel = () => {
+    setRightPanel(true)
+  }
+  const SetLeftPanel = () => {
+    setRightPanel(false)
+  }
+  // const panelRef = useRef()
+  // const SetRightPanel = () => {
+  //     panelRef.current.className = "container right-panel-active"
+  // }
+  // const SetLeftPanel = () => {
+  //     panelRef.current.className = "container"
+  // }
+  let saveformdata = () => {
+    console.log("called", state);
+    fetch("https://jsonplaceholder.typicode.com/todos").then((response) => response.json()).then((result) => {
+      console.log(result);
+    })
+  }
+  let login = () => {
+    console.log("called login", state);
 
-    return (
-        <>
-            <Wrapper>
-                <div className={`container ${rightPanel ? "right-panel-active" : ""}`} id="container">
-                <Link className='position-ab z-index-1' to="/">
-                <i className='fa fa-home'></i>
-                home
-                </Link>
-                {/* <div className="container" id="container" ref={panelRef}> */}
-                    {/* sign Up form section start*/}
-                    <div className="form sign_up">
-                        <form action="#">
-                            {/* heading */}
-                            <h1>Create An Account</h1>
-                            {/* social media icons */}
-                            <div className="social-container">
-                                <NavLink to=""><i className="fa-brands fa-google" /></NavLink>
-                            </div>
-                            <span>use email for registration</span>
-                            {/* input fields start */}
-                            <input type="text" placeholder="User Name" />
-                            <input type="email" placeholder="Email" />
-                            <input type="password" placeholder="Password" />
-                            <button>Create Account</button>
-                            {/* input fields end */}
-                        </form>
-                    </div>
-                    {/* sign Up form section end*/}
-                    {/* sign in form section start*/}
-                    <div className="form sign_in">
-                        <form action="#">
-                            {/* heading */}
-                            <h1>Login In</h1>
-                            {/* social media icons */}
-                            <div className="social-container">
-                                <NavLink to=""><i className="fa-brands fa-google" /></NavLink>
-                            </div>
-                            <span>Login In with your Account</span>
-                            {/* input fields start */}
-                            <input type="email" placeholder="Email" />
-                            <input type="password" placeholder="Password" />
-                            <span>Forgot your <span className="forgot">password?</span></span>
-                            <button>Login</button>
-                            {/* input fields end */}
-                        </form>
-                    </div>
-                    {/* sign in form section end*/}
-                    {/* overlay section start*/}
-                    <div className="overlay-container">
-                        <div className="overlay">
-                            <div className="overlay-pannel overlay-left">
-                                <h1>Already have an account</h1>
-                                <p>Please Login</p>
-                                <button id="signIn" className="overBtn" onClick={SetLeftPanel} >SignIn</button>
-                            </div>
-                            <div className="overlay-pannel overlay-right">
-                                <h1>Create Account</h1>
-                                <p>Start Your Journey with Us</p>
-                                <button id="signUp" className="overBtn" onClick={SetRightPanel}>Sign Up</button>
-                            </div>
-                        </div>
-                    </div>
-                    {/* overlay section start*/}
-                </div>
+  }
+  let setloginformdata = (event) => {
+    console.log("called form data for login", state);
+    // (event)=>{ }
+    setState((koibhi) => ({ formData: { ...koibhi.formData, [event.target.name]: event.target.value } }))
+  }
+  // let saveformdata=(evetn)=>{
+  //   evetn.preventDefault()
+  //   console.log("called");
+  // }
+  console.log(inp);
+  return (
+    <>
+      <Wrapper>
+        <div className={`container ${rightPanel ? "right-panel-active" : ""}`} id="container">
+          <Link className='position-ab z-index-1' to="/">
+            <i className='fa fa-home'></i>
+            home
+          </Link>
+          {/* <div className="container" id="container" ref={panelRef}> */}
+          {/* sign Up form section start*/}
+          <div className="form sign_up">
+            <form action="#">
+              {/* heading */}
+              <h1>Create An Account</h1>
+              {/* social media icons */}
+              <div className="social-container">
+                <NavLink to=""><i className="fa-brands fa-google" /></NavLink>
+              </div>
+              <span>use email for registration</span>
+              {/* input fields start */}
+              <input type="text" onChange={handleChange} name='username' placeholder="User Name" />
+              {errors.usernameError ? <span>This field is Required</span> : <></>}
+              {/* {JSON.stringify(state)} */}
+              <input type="email" onChange={handleChange} name='email' placeholder="Email" />
+              <input type="password" onChange={handleChange} name='password' placeholder="Password" />
+              <button onClick={saveformdata}>Create Account</button>
+              {/* input fields end */}
+            </form>
+          </div>
+          {/* sign Up form section end*/}
+          {/* sign in form section start*/}
+          {/* <div className="form sign_in" onSubmit={saveformdata}> */}
+          <div className="form sign_in">
+            <form action="#">
+              {/* heading */}
+              <h1>Login In</h1>
+              {/* social media icons */}
+              <div className="social-container">
+                <NavLink to=""><i className="fa-brands fa-google" /></NavLink>
+              </div>
+              <span>Login In with your Account</span>
+              {/* input fields start */}
+              <input type="email" onChange={setloginformdata} name='email' placeholder="Email" />
+              <input type="password" onChange={setloginformdata} name='password' placeholder="Password" />
+              <span>Forgot your <span className="forgot">password?</span></span>
+              <button type='button' onClick={login}>Login</button>
+              {/* input fields end */}
+            </form>
+          </div>
+          {/* sign in form section end*/}
+          {/* overlay section start*/}
+          <div className="overlay-container">
+            <div className="overlay">
+              <div className="overlay-pannel overlay-left">
+                <h1>Already have an account</h1>
+                <p>Please Login</p>
+                <button id="signIn" className="overBtn" onClick={SetLeftPanel} >SignIn</button>
+              </div>
+              <div className="overlay-pannel overlay-right">
+                <h1>Create Account</h1>
+                <p>Start Your Journey with Us</p>
+                <button id="signUp" className="overBtn" onClick={SetRightPanel}>Sign Up</button>
+              </div>
+            </div>
+          </div>
+          {/* overlay section start*/}
+        </div>
 
-            </Wrapper>
-        </>
-    )
+      </Wrapper>
+    </>
+  )
 }
 
 const Wrapper = styled.div`

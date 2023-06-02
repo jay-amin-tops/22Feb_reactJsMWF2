@@ -1,0 +1,208 @@
+{
+	"info": {
+		"_postman_id": "0f328a1b-ec68-41db-9121-0432c41a3322",
+		"name": "LiveAPI_InsertUpdateDelete",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24804367"
+	},
+	"item": [
+		{
+			"name": "GetAllUsers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://justjayapi.000webhostapp.com/allusers",
+					"protocol": "http",
+					"host": [
+						"justjayapi",
+						"000webhostapp",
+						"com"
+					],
+					"path": [
+						"allusers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FetchUserDataById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://justjayapi.000webhostapp.com/userdatabyidgetmethod?id=4",
+					"protocol": "http",
+					"host": [
+						"justjayapi",
+						"000webhostapp",
+						"com"
+					],
+					"path": [
+						"userdatabyidgetmethod"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteUserBuID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://justjayapi.000webhostapp.com/deleteusergetmethod?id=35",
+					"protocol": "https",
+					"host": [
+						"justjayapi",
+						"000webhostapp",
+						"com"
+					],
+					"path": [
+						"deleteusergetmethod"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "35"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RegistrationPostRequest",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\":\"user\",\"password\":\"123\",\"fname\":\"a\",\"lname\":\"name\",\"gender\":\"Male\",\"city\":\"1\",\"mobile\":\"9879879874\",\"email\":\"email\"}"
+				},
+				"url": {
+					"raw": "https://justjayapi.000webhostapp.com/registration",
+					"protocol": "https",
+					"host": [
+						"justjayapi",
+						"000webhostapp",
+						"com"
+					],
+					"path": [
+						"registration"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LoginPost",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\":\"admin\",\"password\":\"123\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://justjayapi.000webhostapp.com/login_post",
+					"protocol": "https",
+					"host": [
+						"justjayapi",
+						"000webhostapp",
+						"com"
+					],
+					"path": [
+						"login_post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateUserDataById",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\":\"Testing\",\"password\":\"Password\",\"gender\":\"Male\",\"mobile\":\"9879879878\",\"fullname\":\"Test Testing\",\"email\":\"ronu@mailinator.com\",\"id\":35}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://justjayapi.000webhostapp.com/updateuser",
+					"protocol": "https",
+					"host": [
+						"justjayapi",
+						"000webhostapp",
+						"com"
+					],
+					"path": [
+						"updateuser"
+					]
+				},
+				"description": "https://justjayapi.000webhostapp.com/updateuser"
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateUserDataByIdGetMethod",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://justjayapi.000webhostapp.com/updateusergetmethod?id=35&username=change&password=456&gender=Male&mobile=8888888888",
+					"protocol": "https",
+					"host": [
+						"justjayapi",
+						"000webhostapp",
+						"com"
+					],
+					"path": [
+						"updateusergetmethod"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "35"
+						},
+						{
+							"key": "username",
+							"value": "change"
+						},
+						{
+							"key": "password",
+							"value": "456"
+						},
+						{
+							"key": "gender",
+							"value": "Male"
+						},
+						{
+							"key": "mobile",
+							"value": "8888888888"
+						}
+					]
+				},
+				"description": "https://justjayapi.000webhostapp.com/updateusergetmethod?id=35&username=change&password=456&gender=Male&mobile=8888888888"
+			},
+			"response": []
+		}
+	]
+}
