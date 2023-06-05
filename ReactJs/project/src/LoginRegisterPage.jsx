@@ -3,10 +3,11 @@ import { Link, NavLink } from 'react-router-dom'
 import CustomHook from './CustomHooks/customHook.jsx'
 import "./custom.css"
 import styled from 'styled-components'
+import axios from 'axios';
 
 const LoginRegisterPage = () => {
   // CustomHook.handleChange
-  const { handleChange,inp,errors } = CustomHook({},{});
+  const { handleChange, inp, errors } = CustomHook({ "role": 2 }, {});
   const [rightPanel, setRightPanel] = useState(false)
   const [state, setState] = useState({ formData: "" })
   const SetRightPanel = () => {
@@ -15,18 +16,53 @@ const LoginRegisterPage = () => {
   const SetLeftPanel = () => {
     setRightPanel(false)
   }
-  // const panelRef = useRef()
-  // const SetRightPanel = () => {
-  //     panelRef.current.className = "container right-panel-active"
-  // }
-  // const SetLeftPanel = () => {
-  //     panelRef.current.className = "container"
-  // }
-  let saveformdata = () => {
-    console.log("called", state);
-    fetch("https://jsonplaceholder.typicode.com/todos").then((response) => response.json()).then((result) => {
-      console.log(result);
-    })
+  let saveformdata =  () => {
+    console.log("called saveformdata",inp);
+    // fetch("http://localhost:5000/users", {
+    //   method: "POST", // *GET, POST, PUT, DELETE, etc.
+    //   mode: "no-cors", 
+    //   body: JSON.stringify({username:"test",email:"Email@mail.com",password:"123",role:"2"})
+    // }).then((response) => response.json()).then((result) => {
+    //   console.log(result);
+    // })
+    // fetch("http://localhost:5000/users", {
+    //   method: "POST", 
+    //   mode: "no-cors", 
+    //   body: JSON.stringify(inp)
+    // }).then((res) => res.json()).then((result) => {
+    //   console.log(result);
+    //   // navigate("/login")
+    // })
+    // try {
+    // const response = fetch("http://localhost:5000/users", {
+    //   method: "POST",
+    //   mode: "no-cors",
+    //   body: {"username":"test","email":"Email@mail.com","password":"123","role":"2"}
+    // }).then((res) => res.json()).then((result) => { console.log(result); });
+    // // console.log("Download complete", response);
+    // } catch (error) {
+    //   console.error(`Download error: ${error.message}`);
+    // }
+
+    // console.log("called data", inp);
+    // // body: { inp },
+    // fetch("http://localhost:5000/users",{
+    //   method: "POST", 
+    //   body: JSON.stringify({inp}) ,
+    // }).then((response) => response.json()).then((result) => {
+    //   console.log("result",result);
+    // })
+
+    // {{"username":"test"}}
+    // fetch()
+    axios.post('http://localhost:5000/users', inp)
+      .then(function (response) {
+        console.log("response",response);
+      })
+      .catch(function (error) {
+        console.log("data",error);
+      });
+    //   console.log("data");
   }
   let login = () => {
     console.log("called login", state);
@@ -53,7 +89,7 @@ const LoginRegisterPage = () => {
           {/* <div className="container" id="container" ref={panelRef}> */}
           {/* sign Up form section start*/}
           <div className="form sign_up">
-            <form action="#">
+            <form method='post'>
               {/* heading */}
               <h1>Create An Account</h1>
               {/* social media icons */}
@@ -67,7 +103,7 @@ const LoginRegisterPage = () => {
               {/* {JSON.stringify(state)} */}
               <input type="email" onChange={handleChange} name='email' placeholder="Email" />
               <input type="password" onChange={handleChange} name='password' placeholder="Password" />
-              <button onClick={saveformdata}>Create Account</button>
+              <button type='button' onClick={saveformdata}>Create Account</button>
               {/* input fields end */}
             </form>
           </div>

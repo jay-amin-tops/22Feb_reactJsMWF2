@@ -5,34 +5,29 @@ import styled from 'styled-components'
 
 const LoginRegisterPage = () => {
     const [rightPanel, setRightPanel] = useState(false)
-    const [state, setState] = useState({formData:""})
+    const [state, setState] = useState({})
     const SetRightPanel = () => {
         setRightPanel(true)
     }
     const SetLeftPanel = () => {
         setRightPanel(false)
     }
-    // const panelRef = useRef()
-    // const SetRightPanel = () => {
-    //     panelRef.current.className = "container right-panel-active"
-    // }
-    // const SetLeftPanel = () => {
-    //     panelRef.current.className = "container"
-    // }
+    // saveformdata Function for insert data in db.json file START
     let saveformdata=()=>{
       console.log("called",state);
-      fetch("https://jsonplaceholder.typicode.com/todos").then((response) => response.json()).then((result) => {
-            console.log(result);
-        })
+      // fetch("https://jsonplaceholder.typicode.com/todos").then((response) => response.json()).then((result) => {
+      //       console.log(result);
+      //   })
     }
-    let login=()=>{
-      console.log("called login",state);
+    // saveformdata Function for insert data in db.json file END
+    // let login=()=>{
+    //   console.log("called login",state);
      
-    }
+    // }
     let setloginformdata=(event)=>{
       console.log("called form data for login",state);
       // (event)=>{ }
-      setState((koibhi) => ({ formData: {  ...koibhi.formData,  [event.target.name]: event.target.value } }))
+      // setState((koibhi) => ({ formData: {  ...koibhi.formData,  [event.target.name]: event.target.value } }))
     }
     // let saveformdata=(evetn)=>{
     //   evetn.preventDefault()
@@ -49,7 +44,7 @@ const LoginRegisterPage = () => {
                 {/* <div className="container" id="container" ref={panelRef}> */}
                     {/* sign Up form section start*/}
                     <div className="form sign_up">
-                        <form action="#">
+                        <form method='post'>
                             {/* heading */}
                             <h1>Create An Account</h1>
                             {/* social media icons */}
@@ -62,7 +57,7 @@ const LoginRegisterPage = () => {
                             {/* {JSON.stringify(state)} */}
                             <input type="email" onChange={(event)=>{ setState((koibhi) => ({ formData: {  ...koibhi.formData,  [event.target.name]: event.target.value } }))}} name='email' placeholder="Email" />
                             <input type="password" onChange={(event)=>{ setState((koibhi) => ({ formData: {  ...koibhi.formData,  [event.target.name]: event.target.value } }))}} name='password' placeholder="Password"  />
-                            <button onClick={saveformdata}>Create Account</button>
+                            <button type='button' onClick={saveformdata}>Create Account</button>
                             {/* input fields end */}
                         </form>
                     </div>
