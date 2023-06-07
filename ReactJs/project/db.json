@@ -47,7 +47,7 @@
     {
       "username": "admin",
       "password": "123",
-      "email": "test@mail",
+      "email": "admin@mail.com",
       "role": 1,
       "id": 5
     },
@@ -72,102 +72,79 @@
       "id": 8
     },
     {
-      "id": 9
-    },
-    {
+      "role": 2,
+      "username": "asdf",
+      "email": "ddd",
+      "password": "sd",
       "id": 10
     },
     {
       "id": 11
     },
     {
+      "role": 2,
+      "username": "asdf",
+      "email": "ddd",
+      "password": "sd",
       "id": 12
     },
     {
+      "username": "test",
+      "password": "124443",
+      "email": "email@mail.com",
+      "role": 2,
       "id": 13
     },
     {
-      "name": "test",
-      "email": "test@test.com",
-      "password": "456",
-      "role": 2,
       "id": 14
     },
     {
       "username": "test",
-      "email": "Email@mail.com",
-      "password": "123",
-      "role": "2",
+      "password": "124443",
+      "email": "email@mail.com",
+      "role": 2,
       "id": 15
     },
     {
       "role": 2,
-      "username": "fofuquc",
-      "email": "nobil@mailinator.co",
-      "password": "8888",
+      "username": "qykepy",
+      "email": "bykazapip@mailinator.com",
+      "password": "Pa$$w0rd!",
       "id": 16
     },
     {
-      "role": 2,
-      "username": "fofuquc",
-      "email": "nobil@mailinator.co",
-      "password": "8888",
       "id": 17
     },
     {
-      "role": 2,
-      "username": "fofuquc",
-      "email": "nobil@mailinator.co",
-      "password": "8888",
       "id": 18
     },
     {
       "role": 2,
-      "username": "fofuquc",
-      "email": "nobil@mailinator.co",
-      "password": "8888",
+      "username": "woler",
+      "email": "puhys@mailinator.com",
+      "password": "Pa$$w0rd!",
       "id": 19
     },
     {
-      "username": "test",
-      "email": "Email@mail.com",
-      "password": "123",
-      "role": "2",
-      "id": 20
-    },
-    {
-      "username": "test",
-      "email": "Email@mail.com",
-      "password": "123",
-      "role": "2",
+      "role": 2,
+      "username": "tybaxyco",
+      "email": "dulugep@mailinator.com",
+      "password": "Pa$$w0rd!",
       "id": 21
     },
     {
-      "username": "test",
-      "email": "Email@mail.com",
-      "password": "123",
-      "role": "2",
+      "role": 2,
+      "username": "07june",
+      "email": "07june@mail.com",
+      "password": "test",
       "id": 22
     },
     {
-      "id": 23
-    },
-    {
-      "id": 24
-    },
-    {
-      "username": "test",
-      "email": "Email@mail.com",
-      "password": "123",
-      "role": "2",
-      "id": 25
-    },
-    {
       "role": 2,
-      "username": "checking1",
-      "email": "email123@mail.com12",
-      "password": "test",
-      "id": 26
+      "username": "test1",
+      "email": "test@mail.com",
+      "password": "123",
+      "id": 23
     }
   ]
 }

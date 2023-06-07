@@ -1,14 +1,18 @@
 import React, { useRef, useState } from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 import CustomHook from './CustomHooks/customHook.jsx'
 import "./custom.css"
 import styled from 'styled-components'
 import axios from 'axios';
+import { useCookies } from 'react-cookie'
 
 const LoginRegisterPage = () => {
   // CustomHook.handleChange
   const { handleChange, inp, errors } = CustomHook({ "role": 2 }, {});
   const [rightPanel, setRightPanel] = useState(false)
+  const navigate = useNavigate();
+  const [cookies, setCookie] = useCookies([]);
+
   const [state, setState] = useState({ formData: "" })
   const SetRightPanel = () => {
     setRightPanel(true)
@@ -16,60 +20,54 @@ const LoginRegisterPage = () => {
   const SetLeftPanel = () => {
     setRightPanel(false)
   }
-  let saveformdata =  () => {
-    console.log("called saveformdata",inp);
-    // fetch("http://localhost:5000/users", {
-    //   method: "POST", // *GET, POST, PUT, DELETE, etc.
-    //   mode: "no-cors", 
-    //   body: JSON.stringify({username:"test",email:"Email@mail.com",password:"123",role:"2"})
-    // }).then((response) => response.json()).then((result) => {
-    //   console.log(result);
-    // })
-    // fetch("http://localhost:5000/users", {
-    //   method: "POST", 
-    //   mode: "no-cors", 
-    //   body: JSON.stringify(inp)
-    // }).then((res) => res.json()).then((result) => {
-    //   console.log(result);
-    //   // navigate("/login")
-    // })
-    // try {
-    // const response = fetch("http://localhost:5000/users", {
-    //   method: "POST",
-    //   mode: "no-cors",
-    //   body: {"username":"test","email":"Email@mail.com","password":"123","role":"2"}
-    // }).then((res) => res.json()).then((result) => { console.log(result); });
-    // // console.log("Download complete", response);
-    // } catch (error) {
-    //   console.error(`Download error: ${error.message}`);
-    // }
+  let saveformdata = () => {
+    // body: JSON.stringify(inp)
+    // body: JSON.stringify({username:"test",password:"124443",email:"email@mail.com",role:2})
+    // body: JSON.stringify({username:"test",password:"124443",email:"email@mail.com",role:2})
 
-    // console.log("called data", inp);
-    // // body: { inp },
-    // fetch("http://localhost:5000/users",{
-    //   method: "POST", 
-    //   body: JSON.stringify({inp}) ,
-    // }).then((response) => response.json()).then((result) => {
-    //   console.log("result",result);
-    // })
-
-    // {{"username":"test"}}
-    // fetch()
-    axios.post('http://localhost:5000/users', inp)
-      .then(function (response) {
-        console.log("response",response);
-      })
-      .catch(function (error) {
-        console.log("data",error);
-      });
+    fetch("http://localhost:5000/users", {
+      method: "POST", // *GET, POST, PUT, DELETE, etc.
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(inp)
+    }).then((res) => res.json()).then((result) => {
+      // console.log(result);
+      navigate("/login")
+    })
+    // axios.post('http://localhost:5000/users', inp)
+    //   .then(function (response) {
+    //     console.log("response",response);
+    //   })
+    //   .catch(function (error) {
+    //     console.log("data",error);
+    //   });
     //   console.log("data");
   }
   let login = () => {
-    console.log("called login", state);
-
+    // console.log("Input E Data",state.formData.email);
+    // console.log("Input Data",state.formData.password);
+    axios.get(`http://localhost:5000/users?email=${state.formData.email}&password=${state.formData.password}`)
+      .then(function (response) {
+        // console.log("response",response.data.length);
+        if (response.data.length > 0) {
+          // console.log("valid user",response.data[0]);
+          // console.log("valid user",response.data[0].role);
+          setCookie("userid", response.data[0].id)
+          if (response.data[0].role == 1) {
+            navigate("/admin")
+          } else {
+            navigate("/")
+          }
+        } else {
+          console.log("invalid user");
+        }
+      })
+      .catch(function (error) {
+        console.log("data", error);
+      });
+    // console.log("called login", state);
   }
   let setloginformdata = (event) => {
-    console.log("called form data for login", state);
+    // console.log("called form data for login", state);
     // (event)=>{ }
     setState((koibhi) => ({ formData: { ...koibhi.formData, [event.target.name]: event.target.value } }))
   }
@@ -77,10 +75,16 @@ const LoginRegisterPage = () => {
   //   evetn.preventDefault()
   //   console.log("called");
   // }
-  console.log(inp);
+  // console.log(inp);
+  const addclass = () => {
+    document.body.classList.add("active")
+  }
   return (
     <>
       <Wrapper>
+
+        <button onClick={addclass}>Click</button>
+
         <div className={`container ${rightPanel ? "right-panel-active" : ""}`} id="container">
           <Link className='position-ab z-index-1' to="/">
             <i className='fa fa-home'></i>
