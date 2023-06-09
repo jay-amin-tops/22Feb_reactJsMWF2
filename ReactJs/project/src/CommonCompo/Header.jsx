@@ -16,10 +16,20 @@ import {
   MDBCollapse,
 } from 'mdb-react-ui-kit';
 import { Link } from "react-router-dom";
+import { useCookies } from 'react-cookie';
 export default function App() {
   const [showBasic, setShowBasic] = useState(false);
+  const [cookies, setCookie] = useCookies([]);
 
-  const menuData = { "/home": "Home", "/about": "About us", "/login": "Signin", "/api": "Access API" }
+  console.log(cookies);
+  // if(cookies.userid == undefined) {
+  //   console.log("called inside if");
+  // }else{
+  //   console.log("called inside else");
+
+  // }
+  console.log(cookies.userid);
+  const menuData = { "/home": "Home", "/about": "About us", "/api": "Access API" }
   // const menuData = ["Home","About us" ] 
   // menuData.map((key, value) => {
   //   console.log("Key :", key, "Value :", value);
@@ -34,15 +44,16 @@ export default function App() {
   //   </MDBNavbarLink> */}
   // </MDBNavbarItem>}
   // )
-  let MenuRes = Object.entries(menuData).map(([key, value],i) => { 
-  // let MenuRes = Object.entries(menuData).map((key, value) => { 
-    console.log("key : ",key,"value : ",value,i);
+  let MenuRes = Object.entries(menuData).map(([key, value], i) => {
+    // let MenuRes = Object.entries(menuData).map((key, value) => { 
+    console.log("key : ", key, "value : ", value, i);
     return <MDBNavbarItem key={i}>
-    <Link className='nav-link' to={key}>{value}</Link>
-    {/* <MDBNavbarLink active aria-current='page' href='#'>
+      <Link className='nav-link' to={key}>{value}</Link>
+      {/* <MDBNavbarLink active aria-current='page' href='#'>
       Home
     </MDBNavbarLink> */}
-  </MDBNavbarItem>}
+    </MDBNavbarItem>
+  }
   )
   console.log(MenuRes);
   return (
@@ -62,6 +73,11 @@ export default function App() {
         <MDBCollapse navbar show={showBasic}>
           <MDBNavbarNav className='mr-auto mb-2 mb-lg-0'>
             {MenuRes}
+            <MDBNavbarItem>
+              {(cookies.userid == undefined)  ? <Link className='nav-link' to="login">Login</Link>: <Link className='nav-link' to="/logout">Logout</Link>}
+              
+              
+            </MDBNavbarItem>
             {/* <MDBNavbarItem>
               <Link className='nav-link' to='/'>Home</Link>
             </MDBNavbarItem>
