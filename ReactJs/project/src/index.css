@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#sidebar {
+    display: block;
+    background-color: #fff;
+    height: 100%;
+    position: fixed;
+    transform: translate(0);
+    width: 20%;
+    min-width: 20%;
+    transition: all .5s ease-in-out;
+    overflow-x: hidden;
+    overflow-y: auto;
+    z-index: 999;
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, .07), 0 2px 4px rgba(0, 0, 0, .05);
+    padding: 30px;
+    text-align: center;
+}
+
+
+
+.sidemenu ul li a {
+    color: #4f4f4f;
+    font-size: 18px;
+    line-height: 36px;
+    text-transform: capitalize;
+}
+
+#main {
+    width: 80%;
+    margin-left: auto;
+    transition: all .5s ease-in-out;
+    color: #4f4f4f;
+    background-color: rgb(235, 237, 239);
+}
+
+.hedaer {
+    background-color: #fff;
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, .07), 0 2px 4px rgba(0, 0, 0, .05);
+
+}
+
+#sidebar.sidebaractive {
+    transform: translate(-100%);
+}
+
+#main.mainactive {
+    width: 100%;
+}
+
+.input_box {
+    display: flex;
+    align-items: center;
+}
+
+.dash_input {
+    display: block;
+    background-color: white;
+    outline: none;
+    padding-left: 5px;
+    border: 1px solid #bdbdbd;
+}
+
+.input_box i {
+    display: block;
+    padding: 0 5px;
+}
+
+
+.list ul li {
+    display: inline-block;
+    padding: 0 5px;
+}
+
+.removebtn {
+    border-radius: none !important;
+    border: none !important;
+    background: transparent !important;
+    color: #000 !important;
+    font-size: 20px !important;
+    padding: 0 !important;
+}

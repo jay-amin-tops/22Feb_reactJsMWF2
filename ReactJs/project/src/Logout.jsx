@@ -9,6 +9,7 @@ const Logout = () => {
     useEffect(()=>{
         console.log("called");
         removeCookie("userid");
+        removeCookie("username");
         navigate("/login")
         // cookies.remove("userid");
     })

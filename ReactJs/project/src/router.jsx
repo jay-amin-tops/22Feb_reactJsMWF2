@@ -1,5 +1,5 @@
 import React, { Suspense } from "react";
-import { createBrowserRouter } from "react-router-dom";
+import { Router, createBrowserRouter } from "react-router-dom";
 import HomePage from "./HomePage.jsx";
 import AboutPage from "./AboutPage.jsx";
 import ContactPage from "./ContactPage.jsx";
@@ -12,6 +12,9 @@ import Logout from "./Logout.jsx";
 // import ClassCompoMenu from "./ClassCompo/ClassCompoMenu";
 
 const AdminRoute = React.lazy(()=>{ return import('./Admin/AdminRoute.jsx') })
+
+  
+
 // const FunctionalCompoRoute = React.lazy(()=>{ return import('./FunctionalCompo/FunctionalCompoRoute.jsx') })
 const MainRouter = createBrowserRouter([
     {
@@ -52,5 +55,7 @@ const MainRouter = createBrowserRouter([
     // },
 ]);
 
-
+// MainRouter.run(AdminRoute, Router.HistoryLocation, function (Handler) {
+//     React.render(<Handler/>, document.body);
+//   });
 export default MainRouter;

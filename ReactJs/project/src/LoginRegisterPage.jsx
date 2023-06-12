@@ -52,6 +52,7 @@ const LoginRegisterPage = () => {
           // console.log("valid user",response.data[0]);
           // console.log("valid user",response.data[0].role);
           setCookie("userid", response.data[0].id)
+          setCookie("username", response.data[0].username)
           if (response.data[0].role == 1) {
             navigate("/admin")
           } else {
