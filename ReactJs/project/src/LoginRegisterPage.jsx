@@ -12,6 +12,7 @@ const LoginRegisterPage = () => {
   const [rightPanel, setRightPanel] = useState(false)
   const navigate = useNavigate();
   const [cookies, setCookie] = useCookies([]);
+  const [errorMsg, setErrorMsg] = useState(false);
 
   const [state, setState] = useState({ formData: "" })
   const SetRightPanel = () => {
@@ -63,7 +64,16 @@ const LoginRegisterPage = () => {
         }
       })
       .catch(function (error) {
-        console.log("data", error);
+        console.log("inside catch", error);
+        setErrorMsg(true)
+        if (error.response) {
+          console.log(error.response);
+          console.log("server responded");
+        } else if (error.request) {
+          console.log("network error");
+        } else {
+          console.log(error);
+        }
       });
     // console.log("called login", state);
   }
@@ -84,72 +94,75 @@ const LoginRegisterPage = () => {
     <>
       <Wrapper>
 
-        <button onClick={addclass}>Click</button>
+        {/* <button onClick={addclass}>Click</button> */}
 
-        <div className={`container ${rightPanel ? "right-panel-active" : ""}`} id="container">
-          <Link className='position-ab z-index-1' to="/">
-            <i className='fa fa-home'></i>
-            home
-          </Link>
-          {/* <div className="container" id="container" ref={panelRef}> */}
-          {/* sign Up form section start*/}
-          <div className="form sign_up">
-            <form method='post'>
-              {/* heading */}
-              <h1>Create An Account</h1>
-              {/* social media icons */}
-              <div className="social-container">
-                <NavLink to=""><i className="fa-brands fa-google" /></NavLink>
-              </div>
-              <span>use email for registration</span>
-              {/* input fields start */}
-              <input type="text" onChange={handleChange} name='username' placeholder="User Name" />
-              {errors.usernameError ? <span>This field is Required</span> : <></>}
-              {/* {JSON.stringify(state)} */}
-              <input type="email" onChange={handleChange} name='email' placeholder="Email" />
-              <input type="password" onChange={handleChange} name='password' placeholder="Password" />
-              <button type='button' onClick={saveformdata}>Create Account</button>
-              {/* input fields end */}
-            </form>
-          </div>
-          {/* sign Up form section end*/}
-          {/* sign in form section start*/}
-          {/* <div className="form sign_in" onSubmit={saveformdata}> */}
-          <div className="form sign_in">
-            <form action="#">
-              {/* heading */}
-              <h1>Login In</h1>
-              {/* social media icons */}
-              <div className="social-container">
-                <NavLink to=""><i className="fa-brands fa-google" /></NavLink>
-              </div>
-              <span>Login In with your Account</span>
-              {/* input fields start */}
-              <input type="email" onChange={setloginformdata} name='email' placeholder="Email" />
-              <input type="password" onChange={setloginformdata} name='password' placeholder="Password" />
-              <span>Forgot your <span className="forgot">password?</span></span>
-              <button type='button' onClick={login}>Login</button>
-              {/* input fields end */}
-            </form>
-          </div>
-          {/* sign in form section end*/}
-          {/* overlay section start*/}
-          <div className="overlay-container">
-            <div className="overlay">
-              <div className="overlay-pannel overlay-left">
-                <h1>Already have an account</h1>
-                <p>Please Login</p>
-                <button id="signIn" className="overBtn" onClick={SetLeftPanel} >SignIn</button>
-              </div>
-              <div className="overlay-pannel overlay-right">
-                <h1>Create Account</h1>
-                <p>Start Your Journey with Us</p>
-                <button id="signUp" className="overBtn" onClick={SetRightPanel}>Sign Up</button>
+        {errorMsg ? <>Try after some time</> : <>
+
+          <div className={`container ${rightPanel ? "right-panel-active" : ""}`} id="container">
+            <Link className='position-ab z-index-1' to="/">
+              <i className='fa fa-home'></i>
+              home
+            </Link>
+            {/* <div className="container" id="container" ref={panelRef}> */}
+            {/* sign Up form section start*/}
+            <div className="form sign_up">
+              <form method='post'>
+                {/* heading */}
+                <h1>Create An Account</h1>
+                {/* social media icons */}
+                <div className="social-container">
+                  <NavLink to=""><i className="fa-brands fa-google" /></NavLink>
+                </div>
+                <span>use email for registration</span>
+                {/* input fields start */}
+                <input type="text" onChange={handleChange} name='username' placeholder="User Name" />
+                {errors.usernameError ? <span>This field is Required</span> : <></>}
+                {/* {JSON.stringify(state)} */}
+                <input type="email" onChange={handleChange} name='email' placeholder="Email" />
+                <input type="password" onChange={handleChange} name='password' placeholder="Password" />
+                <button type='button' onClick={saveformdata}>Create Account</button>
+                {/* input fields end */}
+              </form>
+            </div>
+            {/* sign Up form section end*/}
+            {/* sign in form section start*/}
+            {/* <div className="form sign_in" onSubmit={saveformdata}> */}
+            <div className="form sign_in">
+              <form action="#">
+                {/* heading */}
+                <h1>Login In</h1>
+                {/* social media icons */}
+                <div className="social-container">
+                  <NavLink to=""><i className="fa-brands fa-google" /></NavLink>
+                </div>
+                <span>Login In with your Account</span>
+                {/* input fields start */}
+                <input type="email" onChange={setloginformdata} name='email' placeholder="Email" />
+                <input type="password" onChange={setloginformdata} name='password' placeholder="Password" />
+                <span>Forgot your <span className="forgot">password?</span></span>
+                <button type='button' onClick={login}>Login</button>
+                {/* input fields end */}
+              </form>
+            </div>
+            {/* sign in form section end*/}
+            {/* overlay section start*/}
+            <div className="overlay-container">
+              <div className="overlay">
+                <div className="overlay-pannel overlay-left">
+                  <h1>Already have an account</h1>
+                  <p>Please Login</p>
+                  <button id="signIn" className="overBtn" onClick={SetLeftPanel} >SignIn</button>
+                </div>
+                <div className="overlay-pannel overlay-right">
+                  <h1>Create Account</h1>
+                  <p>Start Your Journey with Us</p>
+                  <button id="signUp" className="overBtn" onClick={SetRightPanel}>Sign Up</button>
+                </div>
               </div>
             </div>
+            {/* overlay section start*/}
           </div>
-          {/* overlay section start*/}
-        </div>
+        </>}
 
       </Wrapper>
     </>

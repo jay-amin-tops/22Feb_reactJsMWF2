@@ -6,6 +6,7 @@ import AdminAllusers from './AdminAllusers.jsx';
 // import EditUserData from './EditUserData.jsx';
 // import AddUserData from './AddUserData.jsx';
 import { useCookies } from 'react-cookie';
+import AdminEditUser from './AdminEditUser.jsx';
 
 const AdminRoute = () => {
     const [cookies] = useCookies(['name'])
@@ -23,6 +24,7 @@ const AdminRoute = () => {
                 <Route path="/" element={<AdminMenu />}>
                     <Route path="dashboard" element={<AdminDashboard />} />
                     <Route path="adminallusers" element={<AdminAllusers />} />
+                    <Route path="edituser/:id" element={<AdminEditUser />} />
                 </Route>
             </Routes>
         </>

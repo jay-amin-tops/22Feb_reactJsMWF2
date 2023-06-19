@@ -4,6 +4,7 @@ const CustomHook = (intval, initError) => {
     const [inp,setInput] = useState(intval);
     const [errors,setError] = useState(initError);
     const handleChange=(e)=>{
+        // console.log();
         // console.log("called",e);
         // console.log("called",e.target);
         // console.log("called",e.target.value);
@@ -20,7 +21,10 @@ const CustomHook = (intval, initError) => {
         }
 
     }
-    return {handleChange,inp,errors};
+    const updatedData = (data) => {
+        setInput(data)
+    }
+    return {handleChange,inp,errors,updatedData};
 };
 
 export default CustomHook;

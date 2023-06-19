@@ -79,9 +79,6 @@
       "id": 10
     },
     {
-      "id": 11
-    },
-    {
       "role": 2,
       "username": "asdf",
       "email": "ddd",
@@ -95,9 +92,7 @@
       "role": 2,
       "id": 13
     },
-    {
-      "id": 14
-    },
+  
     {
       "username": "test",
       "password": "124443",
@@ -112,12 +107,7 @@
       "password": "Pa$$w0rd!",
       "id": 16
     },
-    {
-      "id": 17
-    },
-    {
-      "id": 18
-    },
+   
     {
       "role": 2,
       "username": "woler",
