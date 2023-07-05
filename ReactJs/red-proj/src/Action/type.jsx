@@ -1,0 +1,1 @@
+export const RETRIVE_ALL_USERS = "RETRIVE_ALL_USERS";

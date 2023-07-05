@@ -69,21 +69,8 @@
       "username": "test",
       "password": "123",
       "role": 2,
-      "id": 8
-    },
-    {
-      "role": 2,
-      "username": "asdf",
-      "email": "ddd",
-      "password": "sd",
-      "id": 10
-    },
-    {
-      "role": 2,
-      "username": "asdf",
-      "email": "ddd",
-      "password": "sd",
-      "id": 12
+      "id": 8,
+      "email": "updated@email.com"
     },
     {
       "username": "test",
@@ -92,7 +79,6 @@
       "role": 2,
       "id": 13
     },
-  
     {
       "username": "test",
       "password": "124443",
@@ -102,12 +88,11 @@
     },
     {
       "role": 2,
-      "username": "qykepy",
-      "email": "bykazapip@mailinator.com",
+      "username": "testing",
+      "email": "21checking@mail.com",
       "password": "Pa$$w0rd!",
       "id": 16
     },
-   
     {
       "role": 2,
       "username": "woler",
@@ -124,17 +109,10 @@
     },
     {
       "role": 2,
-      "username": "07june",
-      "email": "07june@mail.com",
-      "password": "test",
-      "id": 22
-    },
-    {
-      "role": 2,
-      "username": "test1",
-      "email": "test@mail.com",
+      "username": "21June",
+      "email": "21june@mail.com",
       "password": "123",
-      "id": 23
+      "id": 24
     }
   ]
 }
